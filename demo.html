@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Demo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("form").submit(function(){
+    $.ajax({url: "http://localhost:8080/api/course/price/"+$("#course").val()+"/"+$("#country").val(), success: function(result){
+	var el_down = document.getElementById("GFG_DOWN");
+	var str = JSON.stringify(result, null, 2);
+     el_down.innerHTML=str;
+  }});
+  return false;
+  });
+});
+</script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Make request</h2>
+  <p>Select different combination to test API</p>
+  <form class="form-inline" action="/action_page.php">
+    <label for="email">Course:</label>
+    <select class="form-control" id="course">
+    <option value="1">Machine learning</option>
+    <option value="2">Data Science</option>
+	 <option value="3">Internet of things</option>
+  </select>
+    <label for="pwd">Country:</label>
+  <select class="form-control" id="country">
+    <option value="IND">India</option>
+    <option value="US">United States</option>
+  </select>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<div class="container">
+  <h2>API Response</h2>
+  <pre id="GFG_DOWN" style= 
+        "font-size: 20px;"> 
+    </pre> 
+</div>
+</body>
+</html>
