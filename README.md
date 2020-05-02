@@ -37,8 +37,8 @@ curl http://localhost:8080/api/course/price/3/US
 ####  Covered more
 - Unit test cases written
 - Spring JPA used, so avoided queries complexity
-- Discount facility also covered, can add discount as payment component. Its totaly flexible.
-- One demo.html added for demo. Up application and open this file in crome for demo
+- Discount facility also covered, can add discount as payment component. Its totally flexible.
+- One demo.html added for demo. Up application and open this file in chrome for demo
 
 ####  UseCases to test
 
@@ -55,7 +55,7 @@ curl http://localhost:8080/api/course/price/3/US
 | IND  |India  |INR|
 | US  | United States  |USD|
 
-##### List of possible urls with success case and with different payment strategy and content
+##### List of possible URLs with success case and with different payment strategy and content
 - http://localhost:8080/api/course/price/1/IND
 - http://localhost:8080/api/course/price/2/IND
 - http://localhost:8080/api/course/price/1/US
